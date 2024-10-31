@@ -39,6 +39,9 @@
 //   console.log(reverseString4("!dlroW olleH"))
 //   console.log(reverseString5("!dlroW olleH"))
 
+
+
+
 // Part 1: Thinking Functionally
 // 1. Take and array of numbers and return the sum.
 
@@ -186,25 +189,37 @@ console.log('===================================================================
 //Then use the result to calculate the average age.
 
 function totalAge (array)  {                       // Fix
-const sumAges = list.reduce (accumulator, obj) = > {
-    return accumulator +  num(obj.age)
+const sumAges = array.reduce ((accumulator, obj) => {       // this should keep in keeping with using the callback functions
+    return accumulator + num(obj.age)
 }, 0);
+    return sumAges;
 
 }
+
+
+//Then use the result to calculate the average age.
+
+const sumAges = totalAge(list)
 const avgAge = totalAge / list.length;
 
 
 
 
+//Part 3: Thinking Critically
+//Take an object and increment its age field.
 
 
 
-//Then use the result to calculate the average age.
 
 
 
 
 
+
+
+
+
+//Take an object, make a copy, and increment the age field of the copy. Return the copy.
 
 
 
