@@ -177,6 +177,27 @@ console.log('===================================================================
 //Part 2.3 
 //Map the array to change the “occupation” key to “job” and increment every age by 1.
 
+let bigData = [{ id: "42", name: "Bruce", occupation: "Knight", age: "41" },
+    { id: "48", name: "Barry", occupation: "Runner", age: "25" },
+    { id: "57", name: "Bob", occupation: "Fry Cook", age: "19" },
+    { id: "63", name: "Blaine", occupation: "Quiz Master", age: "58" },
+    { id: "7", name: "Bilbo", occupation: "None", age: "111" }]
+
+
+    function updateData(array) {
+        return array.map(({ occupation, ...person }) => ({  // This map function changes the occupation to job
+            ...person,
+            job: occupation,
+            age: (parseInt(person.age) + 1).toString() // This should take care of adding one year to each person 
+        }));
+    }
+    
+            const updatedBigData = updateData(bigData);
+
+    console.log(updatedBigData); // I find out of names
+
+
+
 
 
 
@@ -223,11 +244,11 @@ function incrementAge(obj) {
 console.log(incrementAge(person)); // this should work, Test/Review, its printing double interesting
 
 
-//Part 3.2
+//Part 3.2                 --Should work now
 //Take an object, make a copy, and increment the age field of the copy. Return the copy.
 
 
-//const person = { id: "7", name: "Bilbo", occupation: "None", age: "111" }
+const person1 = { id: "7", name: "Bilbo", occupation: "None", age: "111" }
 
 function incrementAgeCpy(obj) {
  const copyPerson = {... obj}; //// Fix need to do as instructed above 
@@ -239,9 +260,33 @@ function incrementAgeCpy(obj) {
     objCopy.age= (parseInt(objCopy.age) + 1).toString(); // similar as the preivous function example in keeping with the same structure 
     return objCopy;
 }
-console.log(incrementAgeCpy(person));
+//console.log(incrementAgeCpy(copyPerson1));
+ const updatePerson = incrementAgeCpy(person1);
+ console.log(updatePerson);
+//console.log(person)
 
-console.log(person)
+
+
+                                    //This Part works !!!!
+//For each of the functions above, if the object does not yet contain an age field, create one and set it to 0. Also, add (or modify, as appropriate) an updated_at field that stores a Date object with the current time.
+
+const person2 = { id: "7", name: "Bilbo", occupation: "None" };
+
+function incrementAgeCopy(obj) {       // used the spread operator
+    let objCopy = { ...obj };
+
+    if (!objCopy.hasOwnProperty('age')) {
+        objCopy.age = "0";
+    } else {
+        objCopy.age = (parseInt(objCopy.age) + 1).toString();
+    }
+    objCopy.updated_at = new Date();        //I've added the new data as required and changed the age to 0.
+
+    return objCopy;
+}
+    console.log(incrementAgeCopy(person2));
+
+
 
 
 console.log('==========================================================================================================================================================================')

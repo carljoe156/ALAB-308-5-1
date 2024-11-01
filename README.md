@@ -44,7 +44,7 @@ the following:
 • Sort the array by age.  Made [✓] - Working [✓]
 • Filter the array to remove entries with an age greater than 50.  Made [✓] - Working [✓]
 • Map the array to change the “occupation” key to “job” and increment every age by 1. 
-Made [?]- Working [?] 
+Made [✓] - Working [✓]
 • Use the reduce method to calculate the sum of the ages. 
 Made [✓] - Working [✓]
  Then use the result to calculate the average age. 
@@ -60,7 +60,7 @@ Made [✓] - Working [✓]
 • Take an object, make a copy, and increment the age field of the copy. Return the copy.
 Made [✓] - Working [✓]
 
-For each of the functions above, if the object does not yet contain an age field, create one and set it to 0. Also, add (or modify, as appropriate) an updated_at field that stores a Date object with the current time. Made [?]- Working [?] 
+For each of the functions above, if the object does not yet contain an age field, create one and set it to 0. Also, add (or modify, as appropriate) an updated_at field that stores a Date object with the current time. Made [✓]- Working [?] 
 
 Thought experiment: since the Date object is an object, what would happen if we modified it in the copy of the object created in the second function using setTime() or another method? How could we circumvent potentially undesired behavior?
 Made [?]- Working [?] 
